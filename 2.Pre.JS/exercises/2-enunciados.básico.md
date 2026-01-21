@@ -22,12 +22,12 @@
 
 10. Crea una función que imprima por consola un número al azar entre 0 y 10.
 
-11. Adivina el número: Crea una función que primero guarde en una variable un número aleatorio del 1 al 10. Después, pregunte al usuario a través de un prompt un número del 1 al 10. Una vez recibida la respuesta, compare estos dos números. Si los números coinciden, imprime por consola un string indicando que el usuario ha acertado, sino, imprime por consola que el usuario ha fallado seguido del número correcto.
+11. Crea una función que reciba un número como parámetro e imprima por consola si el número dado es par o impar.
 
-12. Crea una función que reciba un número como parámetro e imprima por consola si el número dado es par o impar.
+12. Crea una función que reciba un parámetro de tipo string e imprima por consola el string revertido. (ejemplo: 'casa' => 'asac).
 
-13. Crea una función que reciba un parámetro de tipo string e imprima por consola el string revertido. (ejemplo: 'casa' => 'asac).
+13. Crea una función que imprima por consola la tabla de multiplicar de un número introducido como parámetro.
 
-14. Crea una función que imprima por consola la tabla de multiplicar de un número introducido como parámetro.
+14. Crea una función que reciba un número por parámetros e imprima por consola si el número recibido es un número primo.
 
-15. Crea una función que reciba un número por parámetros e imprima por consola si el número recibido es un número primo.
+15. Adivina el número: Crea una función que primero guarde en una variable un número aleatorio del 1 al 10. Después, pregunte al usuario a través de un prompt un número del 1 al 10. Una vez recibida la respuesta, compare estos dos números. Si los números coinciden, imprime por consola un string indicando que el usuario ha acertado, sino, imprime por consola que el usuario ha fallado seguido del número correcto.

@@ -126,19 +126,22 @@ Formador / Desarrollador Web FullStack
 
 Ejercicios de introducción a JS
 
-<!--
 ### Día 3 (X - 21/01/2026) - ES 03
 
- - Funciones
-
-Ejercicios de introducción a JS
-
-### Día 4 (J - 22/01/2026) - ES 04
-
+- Funciones
 - Estructuras de control
   - Condicionales
   - Iteraciones
 
+Ejercicios de introducción a JS
+
+<!--
+
+### Día 4 (J - 22/01/2026) - ES 04
+
+- Arrays
+- Objetos
+- 
 Ejercicios de introducción a JS
 
 ### Día 5 (V - 23/01/2026) - ES 05

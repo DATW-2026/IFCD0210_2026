@@ -135,16 +135,19 @@ Ejercicios de introducción a JS
 
 Ejercicios de introducción a JS
 
-<!--
-
 ### Día 4 (J - 22/01/2026) - ES 04
 
 - Arrays
-- Objetos
-- 
+- Instalación de dependencias
+  - Proyecto: package.json
+  - npm i \<nombre-libreria>
+
 Ejercicios de introducción a JS
 
 ### Día 5 (V - 23/01/2026) - ES 05
 
+- Objetos
+- Arrays: métodos
+- Métodos de strings
+
 Ejercicios de introducción a JS: bloque 2
--->

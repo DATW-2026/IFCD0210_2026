@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Inter", Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #c0b2b2;
+}

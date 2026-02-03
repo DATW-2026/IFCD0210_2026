@@ -8,11 +8,30 @@
   <title>Learning CSS</title>
   <link rel="shortcut icon" href="moose.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./variables.css">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./index.css">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('#scala-toggle');
+      toggle.addEventListener('change', function () {
+        if (this.checked) {
+          document.body.classList.add('scale2');
+        } else {
+          document.body.classList.remove('scale2');
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
   <header>
+    <label for="scala-toggle">
+      Usar escala de 1.5
+      <input type="checkbox" id="scala-toggle">
+    </label>
     <hgroup>
       <h1>Aprendiendo CSS</h1>
       <p class="sub-title">Página es para practicar CSS.</p>
@@ -29,7 +48,7 @@
   </header>
   <main>
     <section aria-label="Section 1">
-      <h2>Section 1</h2>
+      <h2 class="x-large">Section 1</h2>
       <ul>
         <li>Elemento de lista 1</li>
         <li>Elemento de lista 2</li>

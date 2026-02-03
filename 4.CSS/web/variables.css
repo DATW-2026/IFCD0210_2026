@@ -1,0 +1,27 @@
+/* html { */
+:root {
+    /* Paleta de colores */
+    --color-primary: black;
+    --color-secondary: bisque;
+    --back-color-primary: var(--color-secondary);
+    --back-color-secondary: brown;
+    --back-color-accent: rgb(86, 45, 45);
+
+    /* Fuentes*/
+    --font-primary: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+    --font-title: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+
+    /* Escala*/
+    --scala: 1.2;
+    --base: 1rem;
+
+    --size-x-large: calc(var(--size-large) * var(--scala));
+    --size-large: calc(var(--size-medium) * var(--scala));
+    --size-medium: calc(var(--size-normal) * var(--scala));
+    --size-normal: var(--base);
+    --size-small: calc(var(--size-normal) / var(--scala));
+    --size-x-small: calc(var(--size-small) / var(--scala));
+}
+
+

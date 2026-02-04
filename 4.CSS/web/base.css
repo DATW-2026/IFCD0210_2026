@@ -1,7 +1,8 @@
-
 body {
-    
     font-family: var(--font-primary);
+    /* 
+    MALO PRACTICA definir tamaños fijos en las fuentes
+    font-size: 16px; */
     font-size: var(--size-normal);
     background-color: var(--back-color-primary);
     color: var(--color-primary);
@@ -25,8 +26,6 @@ h1,
 .h1 {
     font-family: var(--font-title);
 }
-
-
 
 h2,
 .h2,

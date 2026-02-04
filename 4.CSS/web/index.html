@@ -7,9 +7,12 @@
   <meta name="description" content="Página para aprender CSS">
   <title>Learning CSS</title>
   <link rel="shortcut icon" href="moose.svg" type="image/svg+xml">
+  <!-- 
+  Sustituido por index.css que importa los otros tres archivos CSS
+  Se mantiene comentado para recordar al método anterior
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./variables.css">
-  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./base.css"> -->
   <link rel="stylesheet" href="./index.css">
 
   <script>
@@ -33,81 +36,227 @@
       <input type="checkbox" id="scala-toggle">
     </label>
     <hgroup>
-      <h1>Aprendiendo CSS</h1>
-      <p class="sub-title">Página es para practicar CSS.</p>
+      <h1>Porfolio de Pepe Pérez</h1>
+      <p>Desarrollador web</p>
     </hgroup>
     <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Acerca de</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="www.google.com" target="_blank">Google</a></li>
-      </ul>
+      <menu>
+        <li><a href="#personal-info">Información personal</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </menu>
     </nav>
   </header>
+
   <main>
-    <section aria-label="Section 1">
-      <h2 class="x-large">Section 1</h2>
-      <ul>
-        <li>Elemento de lista 1</li>
-        <li>Elemento de lista 2</li>
-        <li>Elemento de lista 3</li>
-        <li>Elemento de lista 4</li>
-        <li>Elemento de lista 5</li>
-      </ul>
-      <p class="highlight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel repellat consequuntur quod
-        labore
-        pariatur id sint quis odio, tempora eos quidem necessitatibus nisi ipsam alias, voluptatum quibusdam
-        exercitationem ut similique.</p>
-      <p class="highlight">Eum quasi laudantium neque dolor perferendis. Sunt cupiditate eaque dolore, maxime alias ex
-        eius ab, recusandae in vero praesentium deserunt neque nihil consectetur odit iste iure magni facere laboriosam
-        culpa.</p>
-      <p>Autem architecto id laborum totam beatae! Numquam ducimus suscipit asperiores et voluptas facere dolore
-        deleniti
-        natus harum porro. Doloremque aperiam voluptas quia eveniet nulla voluptatem nihil unde! Consequuntur,
-        perspiciatis nemo!</p>
-      <p>Dicta suscipit cupiditate iusto nostrum omnis, officiis sequi delectus exercitationem accusamus illum autem
-        repudiandae nulla ex soluta reprehenderit doloribus quis voluptas? Incidunt asperiores assumenda, laudantium
-        nostrum obcaecati dolorum placeat a!</p>
-      <section>
-        <h3>Subsección 1</h3>
-        <p class="out">Vitae nihil voluptates rerum unde quia doloribus doloremque velit sapiente hic dicta itaque
-          consequatur, ullam
-          sunt adipisci magnam expedita sequi asperiores consequuntur ab et totam dolore blanditiis iste minima? Iste.
-        </p>
-        <p>Blanditiis placeat asperiores est ad soluta laborum, laboriosam omnis error, nisi fuga suscipit veniam dolor
-          <span class="out">voluptas repellendus</span> aspernatur sunt. Dolor, deserunt. Nihil ea et perferendis! Modi
-          sunt labore alias nobis?
-        </p>
-
-      </section>
+    <section id="personal-info" aria-label="Información personal">
+      <h2>Información personal</h2>
+      <p>Soy un desarrollador web.</p>
+      <p lang="en">I am a web developer.</p>
+      <div>
+        <img src="./web-612x612.jpg" alt="Representación simbólica de una web" width="200">
+      </div>
     </section>
-    <section aria-label="Section 2">
-      <form action="">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+    <section id="projects" aria-label="Proyectos">
+      <header>
+        <h2>Proyectos</h2>
+        <nav>
+          <ul>
+            <li><a href="#project1">Proyecto 1</a></li>
+            <li><a href="#project2">Proyecto 2</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article id="project1">
+        <h3>Proyecto 1: Angular</h3>
+        <blockquote cite="https://angular.dev/" lang="en">
+          The framework for building scalable web apps with confidence<br>
+          <cite>https://angular.dev/</cite>
+        </blockquote>
+        <p>Descripción del proyecto 1</p>
+      </article>
+      <article id="project2">
+        <h3>Proyecto 2: código en JS</h3>
+        <p>Descripción del proyecto 2</p>
+        <hr>
+        <pre>
+          const x = 10;
+          const y = 20;
+          console.log(x * y);
+        </pre>
+        <figure>
+          <figcaption>Código en JavaScript</figcaption>
+          <img src="./project.sample.png" alt="" width="200">
+        </figure>
+        <p>
+          Este proyecto utiliza JavaScript para realizar cálculos simples.
+        </p>
+        <dl>
+          <dt>Lenguaje</dt>
+          <dd>JavaScript</dd>
+          <dt>Funcionalidad</dt>
+          <dd>Cálculos matemáticos</dd>
+        </dl>
+      </article>
+      <article>
+        <h3>Proyecto 3: Sitio web de la JSConf</h3>
+        <p>Descripción del proyecto 3</p>
+        <iframe src="https://www.jsconf.es/" frameborder="0" width="400" height="300" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/3vOqsRTmRaE?si=LGC7yTCthFAvLJRT"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </article>
+      <aside>
+        <h2>Tecnologías</h2>
+        <p><abbr title="HyperText Markup Language"><strong>HTML</strong></abbr>, <abbr
+            title="Cascading Style Sheets"><strong>CSS</strong></abbr>, <abbr
+            title="JavaScript"><strong>JavaScript</strong></abbr></p>
+      </aside>
+    </section>
+    <section id="contact" aria-label="Contacto">
+      <h2>Contacto</h2>
+      <p>¿Quieres contactar conmigo?</p>
+      <form method="post">
+        <label class="label">
+          <span>Nombre:</span>
+          <input type="text" name="user-name" placeholder="Dime tu nombre" required>
+        </label>
+        <label class="label">
+          Teléfono:
+          <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+        </label>
+        <label class="label">
+          Edad:
+          <input type="number" name="age" min="0" max="120">
+        </label>
+        <label class="label">
+          Contraseña:
+          <input type="password" id="password" name="password" required>
+        </label>
+        <label class="label">
+          Fecha de nacimiento:
+          <input type="date" id="dob" name="dob" required>
+        </label>
+        <label class="label">
+          Hora de contacto:
+          <input type="time" id="contact-time" name="contact-time">
+        </label>
+        <label class="label">
+          Avatar
+          <input type="file" name="file" id="file" accept=".pdf,.doc,.docx,image/*">
+        </label>
+        <div>
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <label class="label">
+          <span>Mensaje:</span>
+          <textarea id="message" name="message"></textarea>
+        </label>
+        <!-- Radio buttons: -->
+        <fieldset>
+          <legend>¿Cómo prefieres que te contacte?</legend>
+          <label>
+            <input type="radio" name="contact-method" value="email" required>
+            Correo electrónico
+          </label>
+          <label>
+            <input type="radio" name="contact-method" value="phone">
+            Teléfono
+          </label>
+        </fieldset>
+        <!-- Checkbox: -->
+        <fieldset>
+          <legend>Suscribirse a:</legend>
+          <label>
+            <input type="checkbox" name="subscribe-newsletter">
+            Newsletter
+          </label>
+          <label>
+            <input type="checkbox" name="subscribe-updates">
+            Actualizaciones de productos
+          </label>
+        </fieldset>
+        <label>País:
+          <select name="country" required>
+            <option value="">Selecciona un país</option>
+            <option value="es">España</option>
+            <option value="fr">Francia</option>
+            <option value="de">Alemania</option>
+            <option value="other">Otros</option>
+          </select>
+        </label>
+        <div>
 
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico">
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
-
-        <button type="submit" disabled>Enviar</button>
+          <button type="submit">Enviar</button>
+        </div>
       </form>
-    </section>
-  </main>
-  <footer>
-    <div>
-      <a href="#">Política de Privacidad</a> |
-      <a href="#">Términos de Servicio</a> |
-      <a href="#">Contacto</a>
-    </div>
-    <p class="impar">algo</p>
-    <p>© 2024 Aprendiendo CSS. Todos los derechos reservados.</p>
-  </footer>
 
+    </section>
+    <section>
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>pregunta 1</summary>
+        <p>Texto de los detalles de la pregunta 1..</p>
+      </details>
+      <details>
+        <summary>pregunta 2</summary>
+        <p>Texto de los detalles de la pregunta...</p>
+      </details>
+
+      <dialog open>
+        <p>Texto del diálogo...</p>
+        <button>Botón de cierre</button>
+      </dialog>
+    </section>
+
+    <aside>
+      <h2>Información adicional</h2>
+      <p>Aquí hay algunos datos adicionales sobre mí.</p>
+      <table>
+        <caption>
+          Tabla de ejemplo
+        </caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Fila 1</th>
+            <td>Fila 1, Celda 1</td>
+            <td>Fila 1, Celda 2</td>
+          </tr>
+          <tr>
+            <th>Fila 2</th>
+            <td>Fila 2, Celda 1</td>
+            <td>Fila 2, Celda 2</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Totales</th>
+            <td>Pie 1</td>
+            <td>Pie 2</td>
+          </tr>
+        </tfoot>
+      </table>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mi primer página web</p>
+    <address><a href="mailto:pepe.perez@example.com">pepe.perez@example.com</a></address>
+    <ul>
+      <li><a href="https://twitter.com/pepeperez">Twitter</a></li>
+      <li><a href="https://linkedin.com/in/pepeperez">LinkedIn</a></li>
+    </ul>
+  </footer>
 </body>
 
 </html>

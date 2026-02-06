@@ -263,29 +263,87 @@ Ejercicios de introducción a JS: bloque 2
     - variables: paleta colores, escala, tipografías
     - css base
 
-
-
 ### Día 3 (04/02/2026) - M1.01 08
 
 - Unidades
   - Valores sin unidad
   - Absolutas
   - Relativas
+- Colores
+  - Notaciones: funciones de notación
 - Propiedades lógicas
 - Box Model
   - object-fit
 - Layouts: Displays tradicionales / Float
 
-<!-- ### Día 4 (05/02/2026) - M1.01 09
+### Día 4 (05/02/2026) - M1.01 09
 
 - Layouts
   - Revisión del Box-Model
   - Flex: Ejercicios
-  - Grid 
 
-- CSS: Lenguaje y funcionalidades
-  - Colores
-    - Notaciones: funciones de notación
-    - Herramientas
+- web "realista": porfolio
+  - Aplicaciones de flex
+    - Layout main
+    - Menu
+    - Iconos de redes sociales
 
-  - -->
+### Día 5 (06/02/2026) - M1.01 10
+
+- web "realista": porfolio
+  - Iconos svg
+  - Paletas de colores: Herramientas
+  - sections -> flex
+
+[Descanso]
+
+<!--
+- Layouts
+  - Grid: Ejercicios
+-->
+<!-- 
+## Semana 5 (Febrero)
+
+### Día 1 (09/02/2026) - M1.01 11
+
+- Position
+  - Relative
+  - Absolute
+  - Anchor
+- RWD
+  - Conceptos: Desktop first v. Mobile First
+  - Media types
+  - Media queries (@media (<query>))
+    - Nueva notación
+  - Ejemplo
+    - Head & Nav
+
+### Día 2 (10/02/2026) - M1.01 12
+
+- Position
+  - Anchor
+  - Fixed & Sticky
+- RWD Ejemplo
+  - Responsive Nav
+  - Contenido
+  - Imágenes
+
+### Día 3 (11/02/2026) - M1.01 13
+
+- RWD Ejemplo (final)
+  - Subgrid
+  - repeat(auto-fit, mimmax(px, fr))
+- Vistazo a otros elementos de CSS
+  - Textos & Tipografías
+    - Listas
+    - Modos de escritura
+  - Formas y gráficos
+    - Bordes, figuras y máscaras
+    - Sombras
+    - Backgrounds
+    - Gradientes
+    - Filtros
+    - Mezclas (Blends)
+- CSS Dinámico
+  - Transformaciones
+  - Transiciones y animaciones -->

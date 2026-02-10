@@ -939,9 +939,9 @@ Properties
 - Las propiedades de animación
   - `animation-duration`
   - `animation-timing-function`
+  - `animation-delay`
   - `animation-iteration-count`
   - `animation-direction`
-  - `animation-delay`
   - `animation-play-state`
   - `animation-fill-mode`
 - Consideraciones al trabajar con animaciones

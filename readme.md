@@ -330,10 +330,10 @@ Ejercicios de introducción a JS: bloque 2
   - Sombras
   - Backgrounds
   - Gradientes
-  - Filtros -
+  - Filtros
   - Mezclas (Blends)
 
-<!-- ### Día 2 (10/02/2026) - M1.01 12
+- ### Día 2 (10/02/2026) - M1.01 12
 
 - RWD Ejemplo
   - Responsive Nav
@@ -343,6 +343,7 @@ Ejercicios de introducción a JS: bloque 2
 
 - CSS Dinámico
   - Transformaciones
-  - Transiciones y animaciones --> -->
+  - Transiciones y animaciones
+  - Animaciones con scroll
 
 <!-- ### Día 3 (11/02/2026) - M1.02 ?? -->

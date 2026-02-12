@@ -1,6 +1,7 @@
 <!-- Comentario -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +12,15 @@
   <link rel="stylesheet" href="./variables.css">
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./index.css">
-  <script src="./main.js" defer></script>
+  <script src="./index.js" type="module" defer></script>
 </head>
+
 <body>
   <header class="header">
     <nav>
       <menu class="mobile-menu">
         <li>
-          <a href="">
+          <a href="#" id="menu-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
               <title>Icono del menu</title>
               <path
@@ -33,11 +35,17 @@
         <li><a href="#contact">Contacto</a></li> -->
       </menu>
     </nav>
-    <dialog>
-      Aquí ira el menu
+    <dialog id="menu-dialog">
+      <menu>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </menu>
+      </nav>
+      <button>Cerrar</button>
     </dialog>
     <label for="theme-toggle">
-      <input type="checkbox" id="theme-toggle">
+      <input type="checkbox" class="switch" id="theme-toggle">
       Tema oscuro
     </label>
   </header>
@@ -48,6 +56,19 @@
         <h1>JS en la Web</h1>
         <p>Módulo 1 - Unidad 2</p>
       </hgroup>
+      <section>
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>pregunta 1</summary>
+          <p>Texto de los detalles de la pregunta 1..</p>
+        </details>
+        <details>
+          <summary>pregunta 2</summary>
+          <p>Texto de los detalles de la pregunta...</p>
+        </details>
+
+
+      </section>
     </section>
 
     <!-- <section id="contact" aria-label="Contacto">
@@ -138,11 +159,6 @@
         <summary>pregunta 2</summary>
         <p>Texto de los detalles de la pregunta...</p>
       </details>
-
-      <dialog open>
-        <p>Texto del diálogo...</p>
-        <button>Botón de cierre</button>
-      </dialog>
     </section> -->
 
     <!-- <aside>
@@ -152,10 +168,10 @@
     </aside> -->
 
   </main>
- </body> 
+
   <footer class="footer">
     <ul>
-      <li><a href="https://github.com/pepeperz" title="GitHub" target="_blank">
+      <li><a href="https://github.com/pepeperz" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <title>Github</title>
             <path
@@ -163,33 +179,38 @@
           </svg>
 
         </a></li>
-      <li><a href="https://twitter.com/pepeperez" title="X (Twitter)" target="_blank">
+      <li><a href="https://twitter.com/pepeperez" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <title>X (Twitter)</title>
             <path
               d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM457.1 180L353.3 298.6L475.4 460L379.8 460L305 362.1L219.3 460L171.8 460L282.8 333.1L165.7 180L263.7 180L331.4 269.5L409.6 180L457.1 180zM419.3 431.6L249.4 206.9L221.1 206.9L392.9 431.6L419.3 431.6z" />
           </svg>
         </a></li>
-      <li><a href="https://linkedin.com/in/pepeperez" title="LinkedIn" target="_blank">
-          <svg title="LinkedIn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+      <li><a href="https://linkedin.com/in/pepeperez" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <title>LinkedIn</title>
             <path
               d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z" />
           </svg>
         </a></li>
       <li>
-        <address><a href="mailto:pepe.perez@example.com" title="email">
+        <address>
+          <a href="mailto:pepe.perez@example.com">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <title>email</title>
               <path
                 d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
             </svg>
-          </a></address>
+          </a>
+        </address>
       </li>
     </ul>
 
 
-    <address>&copy; 2026 CFD Alcobendas - Curso IF2001</img>
+    <address>&copy; 2026 CFD Alcobendas - Curso IF2001
+
+    </address>
   </footer>
+</body>
 
 </html>

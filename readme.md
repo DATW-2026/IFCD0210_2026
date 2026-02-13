@@ -382,33 +382,41 @@ Ejercicios de introducción a JS: bloque 2
 
 ### Día 4 (J 12/02/2026) - M1.02 04
 
-- Revisión: Modelo Mental
-- Proyecto: Tres en raya
-- Modificación de elementos del DOM
+- Revisión de conceptos: funciones
+  - Declaración / asignación / arrow functions
+  - Parámetros, atributos
+  - HOF / callbacks
+
+[Descanso]
+
+- Proyecto: Web inicial
+  - Eventos -> callbacks
+    - Change -> toggle
+    - Click -> mobile menu
+  - Modificación de elementos del DOM
 
 ### Día 5 (V 13/02/2026) - M1.02 05
-
-- Revisión de conceptos: funciones
-  - Parámetros, atributos, callbacks
-- Proyecto: Tres en raya
-  - Cambios en el HTML
-  - Atributos
-  - Clases del HTML
-  - Eventos -> callbacks
-
-## Semana 6 (Febrero)
-
-### Día 1 (L 16/02/2026) - M1.02 06
 
 - Revisión de conceptos: métodos de array
   - Mutables: push, sort
   - Inmutables: toSorted, forEach, map, filter, find
   - Ejercicio: implementar los métodos de arrays / strings
     (ejemplos: myLength, myPush)
+
+- Proyecto: Tres en raya
+  - Cambios en el HTML
+  - Atributos
+  - Clases del HTML
+- Challenge: Quiz
+
+## Semana 6 (Febrero)
+
+### Día 1 (L 16/02/2026) - M1.02 06
+
+- Revisión: Modelo Mental
 - Proyecto: Tres en raya
   - Comprobar el ganador: uso de arrays
   - Formularios: input básico
-  - Challenge: Quiz
 
 ### Día 2 (M 17/02/2026) - M1.02 07
 

@@ -62,18 +62,18 @@ Formador / Desarrollador Web FullStack
 
 ## Previsión de días
 
-- Modulo 1: __36__ 31 días
+- Modulo 1: **36** 31 días
   - Previo Presentación/Git: 3 días
   - Previo JS: 5 días
   - Unidad 1: 12 días (deberían haber sido 10)
-  - Unidad 2: 9 días (5 días cedidos a previo JS + 2 cedidos HTML/CSS) = __18__ 16 días programados
-  - Unidad 3: 2 días (3 días de cedidos a previo git) = __6__ 5 días programados
-  - Total: __36__  31 días
-- Modulo 2: __48__ 42 días
-  - JS server. OOP. NodeJS: __18__ 16 días
-  - DB. Modelos. SQL. Mongo: __18__ 16 días
-  - Aplicaciones Web. __12__ 10 días
-- Modulo 3: __18__ 15 días
+  - Unidad 2: 9 días (5 días cedidos a previo JS + 2 cedidos HTML/CSS) = **18** 16 días programados
+  - Unidad 3: 2 días (3 días de cedidos a previo git) = **6** 5 días programados
+  - Total: **36** 31 días
+- Modulo 2: **48** 42 días
+  - JS server. OOP. NodeJS: **18** 16 días
+  - DB. Modelos. SQL. Mongo: **18** 16 días
+  - Aplicaciones Web. **12** 10 días
+- Modulo 3: **18** 15 días
 
 ## Semana 1 (Enero)
 
@@ -315,7 +315,7 @@ Ejercicios de introducción a JS: bloque 2
 
 ## Semana 5 (Febrero)
 
-### Día 1 (L 09/02/2026) - M1.01 11  (M1.02 01)
+### Día 1 (L 09/02/2026) - M1.01 11 (M1.02 01)
 
 - Layouts
   - Grid: web "realista": porfolio
@@ -363,7 +363,7 @@ Ejercicios de introducción a JS: bloque 2
 
 - Conceptos de Arquitectura Web y Navegadores
 - Regreso a JS
-- JS: Modelo mental
+- JS
   - Variables y datos
   - Objetos
   - Asignación vía variables
@@ -377,7 +377,7 @@ Ejercicios de introducción a JS: bloque 2
   - DOM
   - Acceso secuencial
   - Acceso directo: get v. query
-  - Modificación de los elementos  
+  - Modificación de los elementos
   - Eventos -> callbacks
 
 ### Día 4 (J 12/02/2026) - M1.02 04
@@ -397,28 +397,43 @@ Ejercicios de introducción a JS: bloque 2
 
 ### Día 5 (V 13/02/2026) - M1.02 05
 
-- Revisión de conceptos: métodos de array
-  - Mutables: push, sort
-  - Inmutables: toSorted, forEach, map, filter, find
-  - Ejercicio: implementar los métodos de arrays / strings
-    (ejemplos: myLength, myPush)
+- Revisión de conceptos
+  - objetos
+  - métodos de array
+    - Mutables: push, pop, unshift, shift, sort
+    - Inmutables: toSorted, forEach, map, filter, find, reverse
 
-- Proyecto: Tres en raya
-  - Cambios en el HTML
-  - Atributos
-  - Clases del HTML
-- Challenge: Quiz
+[Descanso]
+
+- Ejercicio: implementar los métodos de arrays / strings
+  (ejemplos: myLength, myPush)
+
+- Proyecto: Web inicial (v2)
+  - Menu mobile mejorado
+  - Navegación interna
 
 ## Semana 6 (Febrero)
 
 ### Día 1 (L 16/02/2026) - M1.02 06
 
 - Revisión: Modelo Mental
+  - Variables y datos
+  - Objetos
+  - Asignación vía variables
+  - Mutabilidad v. inmutabilidad
+
+<!-- ### Día 1 (L 16/02/2026) - M1.02 06
+
 - Proyecto: Tres en raya
+  - Cambios en el HTML
+  - Atributos
+  - Clases del HTML
   - Comprobar el ganador: uso de arrays
   - Formularios: input básico
 
-### Día 2 (M 17/02/2026) - M1.02 07
+- Challenge: Quiz -->
+
+<!-- ### Día 2 (M 17/02/2026) - M1.02 07
 
 - JSON: stringify / parse
 - Code review del challenge
@@ -427,30 +442,30 @@ Ejercicios de introducción a JS: bloque 2
 - Formularios
   - Obtención de datos
   - Validaciones nativas de HTML
-  - Validaciones custom
+  - Validaciones custom -->
 
 ### Día 3 (X 18/02/2026) - M1.02 08
 
-- Enrutamiento (routing)
+<!-- - Enrutamiento (routing)
   - Rutas relativas a origen / a documento
   - root en el servidor web
   - carga de JS basada en location.path
 - Componentes
   - template strings de HTML
   - element.insertAdjacentHTML
-  - componentes funcionales
+  - componentes funcionales -->
 
 ### Día 4 (J 19/02/2026) - M1.02 09
 
-- CRUD basado en componentes: ToDo List
+<!-- - CRUD basado en componentes: ToDo List
   - Concepto de Entidad (Modelo)
   - Mock de datos: servicio para la importación desde JSON
   - Página tasks y su ruta
   - Componente task-cards: array de datos
   - Componente card: parámetros
-  - Delete: función como parámetro
+  - Delete: función como parámetro -->
 
-### Día 5 (V 20/02/2026) - M1.02 10
+<!-- ### Día 5 (V 20/02/2026) - M1.02 10
 
 - Final del CRUD: add y update, funciones como parámetros
 - Asincronía en JS
@@ -463,11 +478,11 @@ Ejercicios de introducción a JS: bloque 2
 
 - AJAX. xmlHttpRequest (XHR)
   - Desde el código <https://pokeapi.co/api/v2/pokemon/ditto>
-  - fetch (Browser, Node)
+  - fetch (Browser, Node) -->
 
 ## Semana 7 (Febrero)
 
-### Día 1 (L 23/02/2026) - M1.03 01
+<!-- ### Día 1 (L 23/02/2026) - M1.03 01
 
 - Accesibilidad / UX
   - Concepto general
@@ -477,19 +492,19 @@ Ejercicios de introducción a JS: bloque 2
     - Pautas WCAG 2
   - Elementos de accesibilidad
     - HTML
-    - CSS
+    - CSS -->
 
-### Día 2 (M 24/02/2026) - M1.03 02
+<!-- ### Día 2 (M 24/02/2026) - M1.03 02
 
 - Accesibilidad / UX
   - WAI - ARIA. Roles y propiedades
-  - Tools
+  - Tools -->
 
-### Día 3 (X 25/02/2026) - M1.02 11
+<!-- ### Día 3 (X 25/02/2026) - M1.02 11
 
-Examen (1)
+Examen (1) -->
 
-------------------
+---
 
 ### Día 4 (J 26/02/2026) - M2.01 01
 

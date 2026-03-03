@@ -589,7 +589,7 @@ Review Examen
 - JS como lenguaje: profundización
   - Valores. Variables y tipos
   - Modelo mental
-  - Constantes: Object.freeze()
+  - Constantes: const + Object.freeze()
 - Comparación con Typescript
   - Inferencia de tipos
   - Constantes: as const
@@ -597,9 +597,11 @@ Review Examen
 [Descanso]
 
 - Casting y coerción
-- Operadores de paso: && - || - ??  (.? - !)
+- Operadores de paso: && (paso true) - || (paso false) - ?? (paso nullish)  
+  - Otros operadores (.? - !)
 - Expresiones y sentencias. Funciones
-- Sentencias: Flujo del código. Condicionales
+- Sentencias: Flujo del código.
+  - Condicionales. Operador ternario
 - Objetos en JS. Arrays
   - Valores primitivos: inmutabilidad
   - Objetos: instancias y mutabilidad
@@ -610,10 +612,13 @@ Review Examen
 ### Día 2 (03/03/2026) - M2.01 03 - JS
 
 - Objetos en JS (continuación)
-  - Constructores y métodos estáticos
+  - Métodos de instancia
   - Tipos primitivos y objetos. Métodos de string
   - Arrays
 - Errores
+
+[Descanso]
+
 - Funciones
   - Parámetros primitivos v. objeto
 - Desestructuración

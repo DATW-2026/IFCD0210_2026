@@ -12,10 +12,11 @@ export default defineConfig([
     },
     tseslint.configs.strict,
     tseslint.configs.stylistic,
-    // {
-    //     rules: {
-    //         "@typescript-eslint/no-inferrable-types": 'off'
-    //     }
+    {
+        rules: {
+            // "@typescript-eslint/no-inferrable-types": 'off'
+            "@typescript-eslint/explicit-function-return-type": "warn"
+        }
         
-    // }
+    }
 ]);

@@ -1,4 +1,4 @@
-import { Product } from './product.ts';
+import { Product } from './product.js';
 
 export interface Item {
     product: Product;

@@ -1,5 +1,5 @@
-import { Company } from './company.ts';
-import { Product } from './product.ts';
+import { Company } from './company.js';
+import { Product } from './product.js';
 
 export class Invoice {
     // propiedades y métodos static

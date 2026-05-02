@@ -42,7 +42,7 @@ export class GenresController {
                 error instanceof PrismaClientKnownRequestError &&
                 error.code === 'P2025'
             ) {
-                const notFoundError = new NotFoundError('Genre not found', {
+                const notFoundError = new NotFoundError('Genre requested not found', {
                     cause: error,
                 });
                 log('Error getting genre by id: %s', notFoundError.message);
@@ -87,7 +87,7 @@ export class GenresController {
                 error instanceof PrismaClientKnownRequestError &&
                 error.code === 'P2025'
             ) {
-                const notFoundError = new NotFoundError('Genre not found', {
+                const notFoundError = new NotFoundError('Genre for update not found', {
                     cause: error,
                 });
                 log('Error updating genre: %s', notFoundError.message);
@@ -114,7 +114,7 @@ export class GenresController {
                 error instanceof PrismaClientKnownRequestError &&
                 error.code === 'P2025'
             ) {
-                const notFoundError = new NotFoundError('Genre not found', {
+                const notFoundError = new NotFoundError('Genre for deletion not found', {
                     cause: error,
                 });
                 log('Error deleting genre: %s', notFoundError.message);

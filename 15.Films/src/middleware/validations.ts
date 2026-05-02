@@ -2,7 +2,7 @@ import type { Request, Response, NextFunction } from 'express';
 import { env } from "../config/env.ts";
 import debug from 'debug';
 import z, { type ZodObject } from 'zod';
-import { HttpError } from '../errors/http-error.ts';
+import { BadRequestError } from '../errors/http-error.ts';
 
 const log = debug(`${env.PROJECT_NAME}:middleware:validations`);
 
@@ -13,7 +13,7 @@ export const validateId = (schema: ZodObject = z.object({ id: z.coerce.number().
         log('Validating ID...');
         const { id } = req.params;
         if (!id) {
-            const error = new HttpError(400, 'Bad Request', 'Animal ID is required');
+            const error = new BadRequestError('Entity ID is required');
             return next(error);
         }
         try {

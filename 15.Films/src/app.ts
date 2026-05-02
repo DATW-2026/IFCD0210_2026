@@ -1,24 +1,29 @@
+import type { AppPrismaClient } from './config/db-config.ts';
+import type { TokenPayload } from './types/login.ts';
 import { env } from './config/env.ts';
 import debug from 'debug';
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import { customHeaders } from './middleware/customs.ts';
-import { HttpError } from './errors/http-error.ts';
 import { errorHandler } from './middleware/error-handler.ts';
+
+import { NotFoundError } from './errors/http-error.ts';
 import { HomeView } from './views/home.ts';
-import type { AppPrismaClient } from './config/db-config.ts';
+import { AuthInterceptor } from './middleware/auth.interceptor.ts';
+
 import { UsersRepo } from './users/repos/users.repo.ts';
 import { UsersController } from './users/controllers/users.controller.ts';
 import { UsersRouter } from './users/router/users.routes.ts';
-import type { TokenPayload } from './types/login.ts';
-import { AuthInterceptor } from './middleware/auth.interceptor.ts';
+
 import { FilmsRepo } from './films/repos/films.repo.ts';
 import { FilmsController } from './films/controllers/films.controller.ts';
 import { FilmsRouter } from './films/router/films.router.ts';
+
 import { GenresRepo } from './genres/repo/genres.repo.ts';
 import { GenresController } from './genres/controller/genres.controller.ts';
 import { GenresRouter } from './genres/router/genres.router.ts';
+
 import { ReviewsController } from './reviews/controller/reviews.controller.ts';
 import { ReviewsRepo } from './reviews/repo/reviews.repo.ts';
 import { ReviewsRouter } from './reviews/router/reviews.router.ts';
@@ -88,7 +93,7 @@ export const createApp = (prisma: AppPrismaClient) => {
 
     app.use((_req, _res, next) => {
         log('Calling errorHandler for 404 error');
-        const error = new HttpError(404, 'Not Found', 'Resource not found');
+        const error = new NotFoundError('Resource not found');
         next(error);
     });
 

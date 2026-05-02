@@ -9,30 +9,12 @@ import type {
     User,
     UserUpdateDTO,
 } from '../../zod/user.schemas.ts';
-import { HttpError } from '../../errors/http-error.ts';
 import type { LoginResult } from '../../types/login.ts';
+import { InternalServerError, NotFoundError, UnauthorizedError } from '../../errors/http-error.ts';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/client';
 
 const log = debug(`${env.PROJECT_NAME}:controller:users`);
 log('Loading users controller...');
-
-const internalError = new HttpError(
-    500,
-    'Internal Server Error',
-    'An unexpected error occurred while processing the request',
-);
-
-const notFoundError = new HttpError(
-    404,
-    'Not Found',
-    'The requested user was not found',
-);
-
-const unauthorizedError = new HttpError(
-    401,
-    'Unauthorized',
-    'Invalid email or password',
-);
 
 export class UsersController {
     #repo: UsersRepo;
@@ -48,9 +30,11 @@ export class UsersController {
             const user: User = await this.#repo.register(userData);
             return res.status(201).json(user);
         } catch (error) {
+            const internalError = new InternalServerError(
+                'Failed to register user',
+                { cause: error }
+            );
             log('Error registering user: %s', internalError.message);
-            internalError.cause = error;
-            internalError.message = 'Failed to register user';
             return next(internalError);
         }
     }
@@ -63,13 +47,19 @@ export class UsersController {
             return res.json(loginResult);
         } catch (error) {
             if (error instanceof PrismaClientKnownRequestError) {
+                const unauthorizedError = new UnauthorizedError(
+                    'Invalid email or password',
+                    { cause: error }
+                );
                 log('Error logging in user: %s', unauthorizedError.message);
                 unauthorizedError.cause = error;
                 return next(unauthorizedError);
             }
+            const internalError = new InternalServerError(
+                'Failed to login user',
+                { cause: error }
+            );
             log('Error logging in user: %s', internalError.message);
-            internalError.cause = error;
-            internalError.message = 'Failed to login user';
             return next(internalError);
         }
     }
@@ -80,7 +70,10 @@ export class UsersController {
             const users: User[] = await this.#repo.getAllUsers();
             return res.json(users);
         } catch (error) {
-            internalError.cause = error;
+            const internalError = new InternalServerError(
+                'Failed to get all users',
+                { cause: error }
+            );
             log('Error getting all users: %s', internalError.message);
             return next(internalError);
         }
@@ -94,12 +87,16 @@ export class UsersController {
             const user: User = await this.#repo.getUserById(id);
             return res.json(user);
         } catch (error) {
+            const internalError = new InternalServerError(
+                'Failed to get user by id',
+                { cause: error }
+            );
             log('Error getting user by id: %s', internalError.message);
             if (
                 error instanceof PrismaClientKnownRequestError &&
                 error.code === 'P2025'
             ) {
-                notFoundError.cause = error;
+                const notFoundError = new NotFoundError('User not found', { cause: error });
                 return next(notFoundError);
             }
 
@@ -118,12 +115,16 @@ export class UsersController {
             const user: User = await this.#repo.updateUser(id, userData);
             return res.json(user);
         } catch (error) {
+            const internalError = new InternalServerError(
+                'Failed to update user',
+                { cause: error }
+            );
             if (
                 error instanceof PrismaClientKnownRequestError &&
                 error.code === 'P2025'
             ) {
+                const notFoundError = new NotFoundError('User for update not found', { cause: error });
                 log('Error updating user: %s', notFoundError.message);
-                notFoundError.cause = error;
                 return next(notFoundError);
             }
 
@@ -146,12 +147,16 @@ export class UsersController {
             );
             return res.json(user);
         } catch (error) {
+            const internalError = new InternalServerError(
+                'Failed to update user profile',
+                { cause: error }
+            );
             if (
                 error instanceof PrismaClientKnownRequestError &&
                 error.code === 'P2025'
             ) {
+                const notFoundError = new NotFoundError('User for profile update not found', { cause: error });
                 log('Error updating user profile: %s', notFoundError.message);
-                notFoundError.cause = error;
                 return next(notFoundError);
             }
 
@@ -174,14 +179,16 @@ export class UsersController {
                 error instanceof PrismaClientKnownRequestError &&
                 error.code === 'P2025'
             ) {
+                const notFoundError = new NotFoundError('User for delete not found', { cause: error });
                 log('Error deleting user: %s', notFoundError.message);
-                notFoundError.cause = error;
                 return next(notFoundError);
             }
 
+            const internalError = new InternalServerError(
+                'Failed to delete user',
+                { cause: error }
+            );
             log('Error deleting user: %s', internalError.message);
-            internalError.cause = error;
-            internalError.message = 'Failed to delete user';
             return next(internalError);
         }
     }

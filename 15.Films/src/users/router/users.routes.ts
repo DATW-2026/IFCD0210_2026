@@ -1,14 +1,14 @@
+import type { UsersController } from '../controllers/users.controller.ts';
+import type { AuthInterceptor } from '../../middleware/auth.interceptor.ts';
+import { Router } from 'express';
 import { env } from '../../config/env.ts';
 import debug from 'debug';
-import type { UsersController } from '../controllers/users.controller.ts';
-import { Router } from 'express';
 import { validateBody, validateId } from '../../middleware/validations.ts';
 import {
     RegisterUserDTOSchema,
     UserCredentialsDTOSchema,
     UpdateUserDTOSchema,
 } from '../../zod/user.schemas.ts';
-import { AuthInterceptor } from '../../middleware/auth.interceptor.ts';
 
 const log = debug(`${env.PROJECT_NAME}:router:users`);
 log('Loading users router...');

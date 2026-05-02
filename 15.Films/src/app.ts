@@ -5,10 +5,10 @@ import debug from 'debug';
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-import { customHeaders } from './middleware/customs.ts';
+import { customHeaders } from './middleware/custom-headers.ts';
 import { errorHandler } from './middleware/error-handler.ts';
 
-import { NotFoundError } from './errors/http-error.ts';
+
 import { HomeView } from './views/home.ts';
 import { AuthInterceptor } from './middleware/auth.interceptor.ts';
 
@@ -27,6 +27,7 @@ import { GenresRouter } from './genres/router/genres.router.ts';
 import { ReviewsController } from './reviews/controller/reviews.controller.ts';
 import { ReviewsRepo } from './reviews/repo/reviews.repo.ts';
 import { ReviewsRouter } from './reviews/router/reviews.router.ts';
+import { invalidRoutes } from './middleware/invalid-handler.ts';
 
 declare module 'express' {
     interface Request {
@@ -52,6 +53,8 @@ export const createApp = (prisma: AppPrismaClient) => {
 
     app.use(express.static('public'));
 
+    // Routes
+
     app.use('/health', (_req, res) => {
         return res.json({
             status: 'ok',
@@ -61,12 +64,12 @@ export const createApp = (prisma: AppPrismaClient) => {
 
     app.get('/', async (_req, res) => {
         log('Received request to root endpoint');
-        return res.send(HomeView.render());
+        return res.send(await HomeView.render(true));
     });
 
-    app.get('/api', (_req, res) => {
-        log('Received request to root endpoint');
-        return res.send(HomeView.render());
+    app.get('/api', async (_req, res) => {
+        log('Received request to API endpoint');
+        return res.send(await HomeView.render(false));
     });
 
     const authInterceptor = new AuthInterceptor();
@@ -91,12 +94,7 @@ export const createApp = (prisma: AppPrismaClient) => {
     const reviewsRouter = new ReviewsRouter(reviewsController, authInterceptor);
     app.use('/api/reviews', reviewsRouter.router);
 
-    app.use((_req, _res, next) => {
-        log('Calling errorHandler for 404 error');
-        const error = new NotFoundError('Resource not found');
-        next(error);
-    });
-
+    app.use(invalidRoutes);
     app.use(errorHandler);
 
     return app;

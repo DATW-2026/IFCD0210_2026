@@ -8,7 +8,7 @@ import {
     RegisterUserDTOSchema,
     UserCredentialsDTOSchema,
     UpdateUserDTOSchema,
-} from '../../zod/user.schemas.ts';
+} from '../entities/user.dto.ts';
 
 const log = debug(`${env.PROJECT_NAME}:router:users`);
 log('Loading users router...');

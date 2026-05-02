@@ -1,7 +1,7 @@
 import type { AppPrismaClient } from '../../config/db-config.ts';
 import { env } from '../../config/env.ts';
 import debug from 'debug';
-import type { ReviewCreateDTO } from '../../zod/film.schemas.ts';
+import type { ReviewCreateDTO } from '../entities/review.dto.ts';
 
 const log = debug(`${env.PROJECT_NAME}:repo:reviews`);
 log('Loading reviews repo...');

@@ -3,7 +3,7 @@ import debug from 'debug';
 import type { GenresRepo } from '../repo/genres.repo.ts';
 import type { Request, Response, NextFunction } from 'express';
 import { InternalServerError, NotFoundError } from '../../errors/http-error.ts';
-import type { Genre, GenreDetail } from '../../zod/film.schemas.ts';
+import type { Genre, GenreDetail } from '../entities/genre.entity.ts';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/client';
 
 const log = debug(`${env.PROJECT_NAME}:controller:genres`);

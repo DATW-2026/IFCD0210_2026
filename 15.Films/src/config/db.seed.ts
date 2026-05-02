@@ -2,17 +2,17 @@ import { env } from './env.ts';
 import debug from 'debug';
 import { connectDB } from './db-config.ts';
 import { Role } from '../../generated/prisma/client.ts';
-import type { RegisterUserData } from '../zod/user.schemas.ts';
+import type { RegisterUserData } from '../users/entities/user.dto.ts';
 import FILMS from '../../data/films.json' with { type: 'json' };
 import GENRES from '../../data/genres.json' with { type: 'json' };
 import { AuthService } from '../services/auth.ts';
 import { fileURLToPath } from 'node:url';
-import type { FilmCreateDTO, GenreCreateDTO } from '../zod/film.schemas.ts';
+import type { FilmCreateDTO } from '../films/entities/film.dto.ts';
+import type { GenreCreateDTO } from '../genres/entities/genre.dto.ts';
 
 const log = debug(`${env.PROJECT_NAME}:configDB`);
 
 log('Loaded database connection...');
-
 
 const USERS: RegisterUserData[] = [
     {
@@ -47,7 +47,10 @@ const USERS: RegisterUserData[] = [
     },
 ];
 
-export const filmSeed = async (films: FilmCreateDTO[], genres: GenreCreateDTO[]) => {
+export const filmSeed = async (
+    films: FilmCreateDTO[],
+    genres: GenreCreateDTO[],
+) => {
     const prisma = await connectDB();
     log('Seeding to database...');
 
@@ -133,7 +136,6 @@ export const seed = async () => {
     await userSeed(USERS);
     await reviewSeed();
 };
-
 
 // Run seed if this file is executed directly
 const currentFilePath = fileURLToPath(import.meta.url);

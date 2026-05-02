@@ -1,10 +1,9 @@
-import { env } from '../../config/env.ts';
-import debug from 'debug';
-
-import { Router } from 'express';
-import { validateBody, validateId } from '../../middleware/validations.ts';
 import type { FilmsController } from '../controllers/films.controller.ts';
-import { FilmCreateDTOSchema, FilmUpdateDTOSchema} from '../../zod/film.schemas.ts';
+import { Router } from 'express';
+import debug from 'debug';
+import { env } from '../../config/env.ts';
+import { validateBody, validateId } from '../../middleware/validations.ts';
+import { FilmCreateDTOSchema, FilmUpdateDTOSchema} from '../entities/film.dto.ts';
 import { AuthInterceptor } from '../../middleware/auth.interceptor.ts';
 
 

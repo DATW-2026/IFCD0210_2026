@@ -2,8 +2,9 @@ import { env } from '../../config/env.ts';
 import debug from 'debug';
 import type { FilmsRepo } from '../repos/films.repo.ts';
 import type { Request, Response, NextFunction } from 'express';
+import type { Film } from '../entities/film.entity.ts';
+import type { FilmUpdateDTO } from '../entities/film.dto.ts';
 import { InternalServerError, NotFoundError } from '../../errors/http-error.ts';
-import type { Film, FilmUpdateDTO } from '../../zod/film.schemas.ts';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/client';
 
 const log = debug(`${env.PROJECT_NAME}:controller:films`);

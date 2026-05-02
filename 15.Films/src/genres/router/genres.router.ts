@@ -4,7 +4,7 @@ import type { GenresController } from '../controller/genres.controller.ts';
 import { Router } from 'express';
 import { validateBody, validateId } from '../../middleware/validations.ts';
 import type { AuthInterceptor } from '../../middleware/auth.interceptor.ts';
-import { GenreCreateDTOSchema } from '../../zod/film.schemas.ts';
+import { GenreCreateDTOSchema } from '../entities/genre.dto.ts';
 
 const log = debug(`${env.PROJECT_NAME}:router:genres`);
 log('Loading genres router...');

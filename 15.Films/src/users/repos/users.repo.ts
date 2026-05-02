@@ -2,13 +2,8 @@ import { env } from '../../config/env.ts';
 import debug from 'debug';
 import { AuthService } from '../../services/auth.ts';
 import type { AppPrismaClient } from '../../config/db-config.ts';
-import type {
-    LoginUserData,
-    ProfileDTO,
-    RegisterUserData,
-    User,
-    UserUpdateDTO,
-} from '../../zod/user.schemas.ts';
+import type { RegisterUserData, LoginUserData, UserUpdateDTO, ProfileDTO } from '../entities/user.dto.ts';
+import type { User } from '../entities/user.entity.ts';
 import type { LoginResult, TokenPayload } from '../../types/login.ts';
 import { Role } from '../../../generated/prisma/enums.ts';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/client';
@@ -59,17 +54,19 @@ export class UsersRepo {
             },
         });
 
-
         const isValid = await AuthService.compare(
             userData.password, // desencriptada
             result.password, // encriptada
         );
 
         if (!isValid) {
-            throw new PrismaClientKnownRequestError('Invalid user or password', {
-                code: 'P2004',
-                clientVersion: '',
-            })
+            throw new PrismaClientKnownRequestError(
+                'Invalid user or password',
+                {
+                    code: 'P2004',
+                    clientVersion: '',
+                },
+            );
         }
 
         // create token

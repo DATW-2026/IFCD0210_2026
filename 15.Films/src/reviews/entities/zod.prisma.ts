@@ -8,7 +8,7 @@ import type {
     ReviewUserIDFilmIDCompoundUniqueInput,
 } from '../../../generated/prisma/models.ts';
 import type { Assert, IsExact } from '../../types/tools.ts';
-import type { ReviewCreateDTO, ReviewParamsDTO, ReviewUpdateDTO } from './review.dto.ts';
+import type { ReviewCreateBodyDTO, ReviewCreateDTO, ReviewFilmParamsDTO, ReviewParamsDTO, ReviewUpdateDTO, ReviewUserParamsDTO } from './review.dto.ts';
 
 // Desde Prisma podemos obtener los tipos correspondientes
 // - al modelo de datos (e.g. FilmModel o GenreModel)
@@ -34,6 +34,10 @@ type ReviewParamsShape = ReviewUserIDFilmIDCompoundUniqueInput;
 
 type _ReviewCheck = Assert<IsExact<Review, ReviewModel>>;
 
+type _ReviewCreateBodyDTOCheck = Assert<
+    IsExact<ReviewCreateBodyDTO, Omit<ReviewCreateShape, 'userID' | 'filmID'>>
+>;
+
 type _ReviewCreateDTOCheck = Assert<
     IsExact<ReviewCreateDTO, ReviewCreateShape>
 >;
@@ -44,4 +48,12 @@ type _ReviewUpdateDTOCheck = Assert<
 
 type _ReviewParamsDTOCheck = Assert<
     IsExact<ReviewParamsDTO, ReviewParamsShape>
+>;
+
+type _ReviewFilmParamsDTOCheck = Assert<
+    IsExact<ReviewFilmParamsDTO, Pick<ReviewParamsShape, 'filmID'>>
+>;
+
+type _ReviewUserParamsDTOCheck = Assert<
+    IsExact<ReviewUserParamsDTO, Pick<ReviewParamsShape, 'userID'>>
 >;

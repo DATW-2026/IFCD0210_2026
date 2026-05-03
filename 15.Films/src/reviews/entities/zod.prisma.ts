@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 
+import type { Review } from '../../../generated/prisma/client.ts';
 import type {
     ReviewModel,
     ReviewUncheckedCreateInput,
@@ -17,8 +18,6 @@ import type { ReviewCreateDTO, ReviewParamsDTO, ReviewUpdateDTO } from './review
 // de las operaciones de la aplicación con DTOs más planos y cómodos para HTTP.
 
 
-// type ReviewModelShape = ReviewModel;
-
 type ReviewCreateShape = Pick<
     ReviewUncheckedCreateInput,
     'review' | 'userID' | 'filmID'
@@ -33,8 +32,7 @@ type ReviewParamsShape = ReviewUserIDFilmIDCompoundUniqueInput;
 // Tipos que exportaríamos normalmente,
 // contrastados con los tipos de Prisma para garantizar compatibilidad
 
-//export type _ReviewCheck = Assert<IsExact<Review, ReviewModelShape>>;
-
+type _ReviewCheck = Assert<IsExact<Review, ReviewModel>>;
 
 type _ReviewCreateDTOCheck = Assert<
     IsExact<ReviewCreateDTO, ReviewCreateShape>

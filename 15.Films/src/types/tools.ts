@@ -1,6 +1,6 @@
 // Herramientas para comprobar la Compatibilidad de tipos entre Zod y Prisma
-// type CompatibleWith<Actual extends Expected, Expected> = Actual;
-// type Exact<A, B> = A extends B ? (B extends A ? A : never) : never;
+export type CompatibleWith<Actual extends Expected, Expected> = Actual;
+export type Exact<A, B> = A extends B ? (B extends A ? A : never) : never;
 // comprueba que Actual sea asignable a Expected
 // no comprueba igualdad exacta
 // no comprueba que Expected no tenga campos extra opcionales

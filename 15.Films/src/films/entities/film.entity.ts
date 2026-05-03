@@ -13,7 +13,9 @@ export const FilmModelSchema = z.object({
     poster: z.string().nullable(),
     rate: z.instanceof(Decimal),
     genres: z.array(GenreModelSchema.omit({ id: true })).optional(),
-    reviews: z.array(ReviewModelSchema).optional(),
+    get reviews() {
+        return z.array(ReviewModelSchema.omit({ film: true })).optional();
+    },
 });
 
 export type Film = z.infer<typeof FilmModelSchema>;

@@ -88,6 +88,13 @@ export class FilmsRepo {
                     set: filmData.genres.map((genre) => ({ name: genre })),
                 },
             },
+            include: {
+                genres: {
+                    omit: {
+                        id: true,
+                    },
+                },
+            },
         });
         return result;
     }

@@ -2,7 +2,7 @@ import { env } from './env.ts';
 import debug from 'debug';
 import { connectDB } from './db-config.ts';
 import { Role } from '../../generated/prisma/client.ts';
-import type { RegisterUserData } from '../users/entities/user.dto.ts';
+import type { RegisterUserDTO } from '../users/entities/user.dto.ts';
 import FILMS from '../../data/films.json' with { type: 'json' };
 import GENRES from '../../data/genres.json' with { type: 'json' };
 import { AuthService } from '../services/auth.ts';
@@ -14,7 +14,7 @@ const log = debug(`${env.PROJECT_NAME}:configDB`);
 
 log('Loaded database connection...');
 
-const USERS: RegisterUserData[] = [
+const USERS: RegisterUserDTO[] = [
     {
         email: 'erni@sample.com',
         password: '123456',
@@ -79,7 +79,7 @@ export const filmSeed = async (
     }
 };
 
-export const userSeed = async (users: RegisterUserData[]) => {
+export const userSeed = async (users: RegisterUserDTO[]) => {
     const prisma = await connectDB();
     log('Seeding users to database...');
 

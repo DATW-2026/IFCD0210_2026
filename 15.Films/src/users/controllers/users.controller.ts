@@ -2,7 +2,12 @@ import { env } from '../../config/env.ts';
 import debug from 'debug';
 import type { UsersRepo } from '../repos/users.repo.ts';
 import type { NextFunction, Request, Response } from 'express';
-import type { RegisterUserData, LoginUserData, UserUpdateDTO, ProfileDTO } from '../entities/user.dto.ts';
+import type {
+    RegisterUserDTO,
+    LoginUserDTO,
+    UserUpdateDTO,
+    ProfileCreateDTO,
+} from '../entities/user.dto.ts';
 import type { User } from '../entities/user.entity.ts';
 import type { LoginResult } from '../../types/login.ts';
 import {
@@ -24,7 +29,7 @@ export class UsersController {
     async register(req: Request, res: Response, next: NextFunction) {
         try {
             log('Registering new user...');
-            const userData: RegisterUserData = req.body;
+            const userData: RegisterUserDTO = req.body;
             // Validated previously with zod middleware
             const user: User = await this.#repo.register(userData);
             return res.status(201).json(user);
@@ -40,7 +45,7 @@ export class UsersController {
     async login(req: Request, res: Response, next: NextFunction) {
         try {
             log('Logging in user...');
-            const loginData: LoginUserData = req.body;
+            const loginData: LoginUserDTO = req.body;
             // Validated previously with zod middleware
             const loginResult: LoginResult = await this.#repo.login(loginData);
             return res.json(loginResult);
@@ -144,7 +149,7 @@ export class UsersController {
             const id = Number(req.params.id);
             log('Updating user profile %s', id);
             // Validate previously with zod middleware
-            const profileData: Partial<ProfileDTO> = req.body; // Validate this data in a real application
+            const profileData: Partial<ProfileCreateDTO> = req.body; // Validate this data in a real application
             const user: User = await this.#repo.updateUserProfile(
                 id,
                 profileData,

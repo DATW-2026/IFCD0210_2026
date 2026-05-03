@@ -8,32 +8,36 @@ import type { Assert, IsExact } from '../../types/tools.ts';
 import type { GenreCreateDTO, GenreUpdateDTO } from './genre.dto.ts';
 import type { Genre, GenreDetail } from './genre.entity.ts';
 
-type GenreModelShape = GenreModel;
+// Shapes del Modelo
 
 type FilmModelShape = FilmModel & {
     genres?: Omit<GenreModel, 'id'>[];
     reviews?: ReviewModel[];
 };
 
-type GenreDetailModelShape = GenreModelShape & {
+type GenreDetailModelShape = GenreModel & {
     films: Omit<FilmModelShape, 'reviews'>[];
 };
 
-type GenreCreateShape = Pick<GenreCreateInput, 'name'>;
+// Checks de compatibilidad del Modelo
 
-type GenreUpdateShape = Partial<GenreCreateShape>;
-
-type _GenreCheck = Assert<IsExact<Genre, GenreModelShape>>;
+type _GenreCheck = Assert<IsExact<Genre, GenreModel>>;
 
 type _GenreDetailCheck = Assert<
     IsExact<GenreDetail, GenreDetailModelShape>
 >;
+
+// Shapes de los DTOs
+
+type GenreCreateShape = Pick<GenreCreateInput, 'name'>;
+
+// Checks de compatibilidad de los DTOs
 
 type _GenreCreateDTOCheck = Assert<
     IsExact<GenreCreateDTO, GenreCreateShape>
 >;
 
 type _GenreUpdateDTOCheck = Assert<
-    IsExact<GenreUpdateDTO, GenreUpdateShape>
+    IsExact<GenreUpdateDTO, GenreCreateShape>
 >;
 

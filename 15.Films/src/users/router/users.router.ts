@@ -3,7 +3,7 @@ import type { AuthInterceptor } from '../../middleware/auth.interceptor.ts';
 import { Router } from 'express';
 import { env } from '../../config/env.ts';
 import debug from 'debug';
-import { validateBody, validateId } from '../../middleware/validations.ts';
+import { validateBody, validateParams } from '../../middleware/validations.ts';
 import {
     RegisterUserDTOSchema,
     UserCredentialsDTOSchema,
@@ -42,13 +42,13 @@ export class UsersRouter {
         );
         this.#router.get(
             '/:id',
-            validateId(),
+            validateParams(),
             this.#authInterceptor.authenticate.bind(this.#authInterceptor),
             this.#controller.getUserById.bind(this.#controller),
         );
         this.#router.patch(
             '/:id',
-            validateId(),
+            validateParams(),
             validateBody(UpdateUserDTOSchema),
             this.#authInterceptor.authenticate.bind(this.#authInterceptor),
             this.#authInterceptor.isOwnerOrAdmin.bind(this.#authInterceptor),
@@ -56,7 +56,7 @@ export class UsersRouter {
         );
         this.#router.delete(
             '/:id',
-            validateId(),
+            validateParams(),
             this.#authInterceptor.authenticate.bind(this.#authInterceptor),
             this.#authInterceptor.isOwnerOrAdmin.bind(this.#authInterceptor),
             this.#controller.deleteUser.bind(this.#controller),

@@ -14,7 +14,7 @@ import { AuthInterceptor } from './middleware/auth.interceptor.ts';
 
 import { UsersRepo } from './users/repos/users.repo.ts';
 import { UsersController } from './users/controllers/users.controller.ts';
-import { UsersRouter } from './users/router/users.routes.ts';
+import { UsersRouter } from './users/router/users.router.ts';
 
 import { FilmsRepo } from './films/repos/films.repo.ts';
 import { FilmsController } from './films/controllers/films.controller.ts';

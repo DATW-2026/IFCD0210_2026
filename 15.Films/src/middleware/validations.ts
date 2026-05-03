@@ -1,5 +1,5 @@
 import type { Request, Response, NextFunction } from 'express';
-import { env } from "../config/env.ts";
+import { env } from '../config/env.ts';
 import debug from 'debug';
 import z, { type ZodObject } from 'zod';
 import { BadRequestError } from '../errors/http-error.ts';
@@ -8,23 +8,26 @@ const log = debug(`${env.PROJECT_NAME}:middleware:validations`);
 
 log('Loading validation middleware...');
 
-export const validateId = (schema: ZodObject = z.object({ id: z.coerce.number().int().positive() })) => {
+export const validateParams = ( schema: ZodObject = z.strictObject({
+        id: z.coerce.number().int().positive(),
+    })) => {
     return (req: Request, res: Response, next: NextFunction) => {
-        log('Validating ID...');
-        const { id } = req.params;
-        if (!id) {
-            const error = new BadRequestError('Entity ID is required');
-            return next(error);
-        }
+        log('Validating request params...');
         try {
-            schema.parse({ id });
+            schema.parse(req.params);
             return next();
         } catch (error) {
-            return next(error);
+            const { id } = req.params;
+            if (!id) {
+                const idError = new BadRequestError('Entity ID is required', {cause: error});
+                return next(idError);
+            }
+            const paramsError = new BadRequestError(`Invalid parameter: ${id}`, {cause: error});
+            return next(paramsError);
         }
     };
-}
-    
+};
+
 export const validateBody = (schema: ZodObject) => {
     return (req: Request, res: Response, next: NextFunction) => {
         log('Validating request body...');
@@ -35,8 +38,8 @@ export const validateBody = (schema: ZodObject) => {
             req.body = validationResult;
             return next();
         } catch (error) {
-            return next(error);
+            const bodyError = new BadRequestError('Invalid request body', {cause: error});
+            return next(bodyError);
         }
-    }
-}
-
+    };
+};

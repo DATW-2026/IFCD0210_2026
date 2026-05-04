@@ -2,11 +2,11 @@
 
 ## Teórico
 
-Unidad 1 <>
+Unidad 1 <https://forms.gle/5nk3jVzrnTHivzGo6>
 
-Unidad 2 <>
+Unidad 2 <https://forms.gle/Y7kKP5TibXti6jd57>
 
-Unidad 3 <>
+Unidad 3 <https://forms.gle/tkGSsB2rNDtxw2dr8>
 
 ## Práctico
 

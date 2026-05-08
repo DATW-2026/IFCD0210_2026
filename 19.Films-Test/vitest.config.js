@@ -4,5 +4,6 @@ export default defineConfig({
   test: {
     // ... Specify options here.
     globals: true,
+    setupFiles: './src/config/setup-test.ts'
   },
 })

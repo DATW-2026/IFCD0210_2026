@@ -1535,7 +1535,7 @@ Testing
   - Test de integración
   - Test de extremo a extremo (E2E)
 - Herramientas de testing en Backend
-  - Node: node:test + assert
+  - Node: node:test + node:assert
   - Vitest. Instalación y configuración
   - Supertest (e2e)
 

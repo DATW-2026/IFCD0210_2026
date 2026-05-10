@@ -128,11 +128,11 @@ describe('Given method verifyTokenAsync from class AuthService', () => {
     });
 
     describe('When it is executed with NOT valid token', () => {
-        test('Then it will reject the promise', () => {
+        test('Then it will reject the promise', async () => {
             // Arrange
             const badToken = 'no soy un token';
             // Act + Assert
-            expect(AuthService.verifyTokenAsync(badToken)).rejects.toThrow();
+            await expect(AuthService.verifyTokenAsync(badToken)).rejects.toThrow();
         });
     });
 })

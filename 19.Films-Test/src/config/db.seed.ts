@@ -120,7 +120,7 @@ export const reviewSeed = async () => {
     const films = await prisma.film.findMany();
 
     for (const user of users) {
-        for (const film of films.slice(0, 3)) {
+        for (const film of films.slice(0, 2)) {
             // Limit to 3 reviews per user for demo purposes
             await prisma.review.create({
                 data: {

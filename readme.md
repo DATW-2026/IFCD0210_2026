@@ -1555,7 +1555,7 @@ Testing
 - Coverage y casos de prueba
 - Matchers. Ejercicios
 
-### Día 5 (V 08/05/2026) - M3.00 03 - Test Backend
+### Día 5 (V 08/05/2026) - M3.00 03 - Test Backend (1)
 
 - Testing unitario del backend (1)
   - Clone del proyecto Films
@@ -1567,13 +1567,13 @@ Testing
     - encapsulación en clases/funciones
     - mínimo de lógica directamente en módulos (e.g. en index.ts)
 
-- Testing unitario del backend (2)
+- Testing unitario del backend
   - Servicios (Auth)
     - Problemas con el environment: mock de Zod
 
 [descanso]
 
-- Testing unitario del backend (2 - continuación)
+- Testing unitario del backend (1 - continuación)
   - Configuración de Vitest: read .env.test
   - Servicios (Auth)
     - Tests de integración: con librerías bcrypt y jsonwebtoken
@@ -1587,9 +1587,9 @@ Testing
 
 ## Semana 17 (Mayo)
 
-### Día 1 (L 11/05/2026) - M3.00 04 - Test Backend
+### Día 1 (L 11/05/2026) - M3.00 04 - Test Backend (2)
 
-- Testing unitario del backend (3)
+- Testing unitario del backend (2)
   - Review vitest.config.ts
   - Review de los tests realizados en el challenge
   - Repositories (errores)
@@ -1599,7 +1599,7 @@ Testing
 
 [descanso]
 
-- Testing unitario del backend (3 - continuación)
+- Testing unitario del backend (2 - continuación)
   - Controllers
     - e.g FilmsController
   - Middleware
@@ -1611,16 +1611,27 @@ Challenge
 - Añadir test del resto del middleware
   - Interceptores
 
-### Día 2 (M 12/05/2026) - M3.00 05 - Supertest
+### Día 2 (M 12/05/2026) - M3.00 05 - Backend e2e: Supertest
 
-<!-- Se podría añadir algo de lo anterior -->
+- Review test propuestos
+  - custom-headers Middleware
+  - Intereptores
+  - HomeView
+
+[descanso]
+
+- Testing de integración del backend
+  - Setup del entorno; seeds
+  - Supertest
+    - Test de rutas (endpoints)
+
+### Día 3 (X 13/05/2026) - M3.00 06 - Frontend
 
 <!-- - Testing de integración del backend
   - Supertest
     - Test de rutas (endpoints)
-    - Test de rutas protegidas (auth) -->
-
-### Día 3 (X 13/05/2026) - M3.00 06 - Frontend
+    - Test de rutas protegidas (auth) 
+-->
 
 <!--
 

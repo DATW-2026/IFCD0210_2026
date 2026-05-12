@@ -54,9 +54,12 @@ export const filmSeed = async (
     const prisma = await connectDB();
     log('Seeding to database...');
 
-    await prisma.review.deleteMany();
-    await prisma.film.deleteMany();
-    await prisma.genre.deleteMany();
+    await prisma.$executeRaw`TRUNCATE TABLE "reviews" RESTART IDENTITY CASCADE`;
+    // review.deleteMany(); 
+    await prisma.$executeRaw`TRUNCATE TABLE "films" RESTART IDENTITY CASCADE`
+    //film.deleteMany();
+    await prisma.$executeRaw`TRUNCATE TABLE "genres" RESTART IDENTITY CASCADE`
+    //genre.deleteMany();
 
     await prisma.genre.createMany({
         data: genres,
@@ -83,9 +86,12 @@ export const userSeed = async (users: RegisterUserDTO[]) => {
     const prisma = await connectDB();
     log('Seeding users to database...');
 
-    await prisma.review.deleteMany();
-    await prisma.profile.deleteMany();
-    await prisma.user.deleteMany();
+    await prisma.$executeRaw`TRUNCATE TABLE "reviews" RESTART IDENTITY CASCADE`;
+    //review.deleteMany();
+    await prisma.$executeRaw`TRUNCATE TABLE "profiles" RESTART IDENTITY CASCADE`;
+    //profile.deleteMany();
+    await prisma.$executeRaw`TRUNCATE TABLE "users" RESTART IDENTITY CASCADE`;
+    //user.deleteMany();
 
     for (const user of users) {
         const hashedPassword = await AuthService.hash(user.password);
@@ -107,7 +113,8 @@ export const reviewSeed = async () => {
     const prisma = await connectDB();
     log('Seeding reviews to database...');
 
-    await prisma.review.deleteMany();
+    await prisma.$executeRaw`TRUNCATE TABLE "reviews" RESTART IDENTITY CASCADE`;
+    //review.deleteMany();
 
     const users = await prisma.user.findMany();
     const films = await prisma.film.findMany();

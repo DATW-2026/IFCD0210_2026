@@ -26,7 +26,7 @@ export class Counter extends HTMLElement {
         // Devolver siempre un solo elemento
         this.#template = /*html*/ `
          <div class="counter">
-             <h3>Counter v2 - ${this.counterId}</h3>
+             <h3>Counter - id ${this.counterId}</h3>
              <button>Click: ${this.counter}</button>
          </div>
          `;

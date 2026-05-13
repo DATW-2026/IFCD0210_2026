@@ -1,5 +1,5 @@
 import './footer.css';
-import { socials } from '../../data/socials';
+import socials from '../../data/socials.json';
 
 export class Footer extends HTMLElement {
     // Propiedades y métodos estáticos
@@ -38,7 +38,6 @@ export class Footer extends HTMLElement {
          <footer class="footer">
              <ul>${this.#list}</ul>
              <address>${this.#address}</address>
-             <p>${Math.random()}</p>
          </footer>
          `;
     }

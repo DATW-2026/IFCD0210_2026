@@ -53,7 +53,7 @@ Desde el punto de vista de arquitectura, la aplicación se organizará en torno 
 - `Genre` para representar los géneros asociados a una película.
 - `Review` para gestionar las valoraciones y comentarios de los usuarios.
 
-Todas las interacciones con la API se encapsularán en una única capa de repositorios siguiendo el patrón repositorio. Esta capa actuará como punto único de acceso a los datos y aislará al resto de la aplicación de los detalles técnicos de transporte, endpoints y formato de respuesta.
+Todas las interacciones con la API se encapsularán en una única **capa de repositorios** siguiendo el patrón repositorio. Esta capa actuará como punto único de acceso a los datos y aislará al resto de la aplicación de los detalles técnicos de transporte, endpoints y formato de respuesta.
 
 ## Organización funcional
 
@@ -70,7 +70,7 @@ La aplicación se apoyará en las siguientes piezas funcionales:
 
 La configuración técnica del proyecto se reparte entre varios ficheros clave:
 
-- [tsconfig.json](tsconfig.json) define la compilación de TypeScript con `target` en `ES2023`, módulos `ESNext`, resolución `bundler` y salida desactivada con `noEmit: true`, porque Vite se encarga del bundling final.
+- [tsconfig.json](tsconfig.json) define la compilación de TypeScript con `target` en `ESNext`, módulos `ESNext`, resolución `bundler` y salida desactivada con `noEmit: true`, porque Vite se encarga del bundling final.
 - También en [tsconfig.json](tsconfig.json) se activa `strict`, junto con `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch` y `noUncheckedSideEffectImports`, para mantener un control alto sobre la calidad del código.
 - [eslint.config.js](eslint.config.js) usa `@eslint/js`, `typescript-eslint` y `globals` para aplicar reglas base de JavaScript, reglas estrictas y reglas de estilo para TypeScript, además de declarar los entornos `browser` y `node`.
 - La configuración de Prettier se recoge en [package.json](package.json), donde se establece `singleQuote: true` para que el formateo use comillas simples de forma consistente.

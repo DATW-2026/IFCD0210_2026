@@ -22,18 +22,18 @@ export class Header extends HTMLElement {
         this.#template =
             /*html*/
             `<header class="header">
-        <nav>
-            <app-menu data-type="mobile-menu"></app-menu>
-            <app-menu data-type="full-menu"></app-menu>
-        </nav>
-        <dialog class="menu-dialog" id="menu-dialog">
-            <nav>
-                <app-menu></app-menu>
-            </nav>
-        </dialog>
-        <app-theme></app-theme>
-    </header>
-    `;
+                <nav>
+                    <app-menu data-type="mobile-menu"></app-menu>
+                    <app-menu data-type="full-menu"></app-menu>
+                </nav>
+                <dialog class="menu-dialog" id="menu-dialog">
+                    <nav>
+                        <app-menu></app-menu>
+                    </nav>
+                </dialog>
+                <app-theme></app-theme>
+            </header>
+            `;
     }
 
     #setElement() {

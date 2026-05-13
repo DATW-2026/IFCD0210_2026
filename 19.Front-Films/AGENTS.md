@@ -23,10 +23,10 @@
 ## Coding Style & Naming Conventions
 
 - Write TypeScript with strict-mode compatibility in mind;
-- `tsconfig.json` enables `strict`, `noUnusedLocals`, and `noUnusedParameters`. 
-- Follow the existing style: 
-  - 4-space indentation, 
-  - single quotes, 
+- `tsconfig.json` enables `strict`, `noUnusedLocals`, and `noUnusedParameters`.
+- Follow the existing style:
+  - 4-space indentation,
+  - single quotes,
   - semicolons
   - explicit imports with `.ts` omitted. 
 - Keep page files named `*-page.ts`, and use the current component split:
@@ -36,9 +36,9 @@
 
 ## Testing Guidelines
 
-- No automated test framework is configured in this repository yet. 
-- Vitest will be introduced in a later course stage, not in the current phase. 
-- Until one is added, validate changes with `npm run build` and manual browser checks through `npm run dev`, especially routing and custom element registration. 
+- No automated test framework is configured in this repository yet.
+- Vitest will be introduced in a later course stage, not in the current phase.
+- Until one is added, validate changes with `npm run build` and manual browser checks through `npm run dev`, especially routing and custom element registration.
 - If you introduce tests, prefer naming them `*.test.ts` and keep them close to the feature they cover.
 
 ## Implementation Notes
@@ -49,9 +49,9 @@
 
 ## Commit & Pull Request Guidelines
 
-- Commits use short imperative subjects such as `Update course info` and `Add view basic test`. 
+- Commits use short imperative subjects such as `Update course info` and `Add view basic test`.
 - Always write commit messages in English, even if the codebase is in another language
-- Keep commit titles concise, capitalized, and focused on one change. 
+- Keep commit titles concise, capitalized, and focused on one change.
 - Pull requests should include a brief summary, affected screens or routes, linked issues if any, and screenshots or short recordings for UI changes.
 
 ## Configuration Tips

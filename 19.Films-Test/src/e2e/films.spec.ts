@@ -4,7 +4,10 @@ import { env } from '../config/env.ts';
 import { seed } from '../config/db-test.seed.ts';
 import { connectDB } from '../config/db-config.ts';
 import { createApp } from '../app.ts';
-import type { FilmCreateDTO, FilmUpdateDTO } from '../films/entities/film.dto.ts';
+import type {
+    FilmCreateDTO,
+    FilmUpdateDTO,
+} from '../films/entities/film.dto.ts';
 import { AuthService } from '../services/auth.ts';
 
 describe('Given routes Films', () => {
@@ -75,6 +78,7 @@ describe('Given routes Films', () => {
                     .send()
                     .expect(400);
                 expect(response.badRequest).toBe(true);
+                expect(response.body).toStrictEqual({});
             });
         });
 
@@ -96,6 +100,8 @@ describe('Given routes Films', () => {
                     .send(newFilmMock)
                     .expect(201);
 
+                expect(response.ok).toBe(true);
+                expect(response.body.id).toBe(4);
                 expect(response.body.title).toBe(newFilmMock.title);
             });
         });
@@ -125,7 +131,6 @@ describe('Given routes Films', () => {
     });
 
     describe('When making PATCH requests', () => {
-
         const updateFilmMock: FilmUpdateDTO = {
             title: 'Updated Title',
         };
@@ -159,6 +164,15 @@ describe('Given routes Films', () => {
                     .expect(200);
 
                 expect(response.body.title).toBe('Updated Title');
+            });
+
+            test('Then [PATCH] /api/films/100 respond 404 and return a bad request error', async () => {
+                const response = await request(app)
+                    .patch(urlBase + '/100')
+                    .set('Authorization', `Bearer ${adminToken}`)
+                    .send(updateFilmMock)
+                    .expect(404);
+                expect(response.notFound).toBe(true);
             });
         });
 
@@ -208,6 +222,13 @@ describe('Given routes Films', () => {
                     .get(urlBase + '/3')
                     .expect(404);
             });
+
+            test('Then [DELETE] /api/films/100 respond 404 ', async () => {
+                await request(app)
+                    .delete(urlBase + '/100')
+                    .set('Authorization', `Bearer ${adminToken}`)
+                    .expect(404);
+            });
         });
 
         describe('And authentication is EDITOR', () => {
@@ -250,6 +271,7 @@ describe('Given routes Films', () => {
                 const response = await request(app)
                     .delete(urlBase + '/1')
                     .set('Authorization', `Bearer ${adminToken}`)
+                    //.expect(409);
                     .expect(500);
                 expect(response.serverError).toBe(true);
             });

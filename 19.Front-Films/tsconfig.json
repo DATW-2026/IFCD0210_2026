@@ -3,8 +3,8 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ES2025", "DOM", "DOM.Iterable"],
-    "types": ["vite/client"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "vitest/globals"],
     "skipLibCheck": true,
 
     /* Bundler mode */

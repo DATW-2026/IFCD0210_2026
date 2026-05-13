@@ -7,16 +7,20 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "test": "vitest",
+        "test:c": "vitest run --coverage"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
+        "@vitest/coverage-v8": "^4.1.6",
         "eslint": "^10.0.3",
         "globals": "^17.4.0",
         "prettier": "^3.8.1",
         "typescript": "~5.9.3",
         "typescript-eslint": "^8.57.1",
-        "vite": "^8.0.1"
+        "vite": "^8.0.1",
+        "vitest": "^4.1.6"
     },
     "prettier": {
         "singleQuote": true

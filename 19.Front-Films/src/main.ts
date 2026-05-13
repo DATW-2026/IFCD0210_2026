@@ -14,4 +14,3 @@ window.addEventListener('popstate', (event) => {
     console.log('Current location', location.pathname);
     navigate(location.href, false);
 });
-

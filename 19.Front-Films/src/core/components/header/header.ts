@@ -2,10 +2,10 @@ import { Theme } from '../theme/theme';
 import './header.css';
 
 export class Header extends HTMLElement {
-    static #selector = 'app-header';
+    static selector = 'app-header';
     static register() {
-        if (customElements.get(Header.#selector) === undefined) {
-            customElements.define(Header.#selector, Header);
+        if (customElements.get(Header.selector) === undefined) {
+            customElements.define(Header.selector, Header);
         }
         Theme.register();
     }

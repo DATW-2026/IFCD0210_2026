@@ -9,7 +9,7 @@ describe('Given Footer component', () => {
     describe('When its render in a container', () => {
 
         test('Then we can test it WITH the testing library', () =>{
-            // Footer.render()
+            // Footer.register()
             const e = getByRole(co, 'contentinfo', {
                 name: 'main-footer'
             })

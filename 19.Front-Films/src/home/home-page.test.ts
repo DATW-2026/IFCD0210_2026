@@ -10,7 +10,7 @@ describe('Given HomePage component', () => {
         element: HTMLElement = document.createElement(HomePage.selector),
     ) => {
         HomePage.register();
-        document.body.append(element);
+        // document.body.append(element);
         return element;
     };
 
@@ -36,7 +36,7 @@ describe('Given HomePage component', () => {
             render();
         });
 
-        test.only('Then a section will be in the document', () => {
+        test('Then a section will be in the document', () => {
             screen.getByRole('region', {
                 name: "home-page"
             })

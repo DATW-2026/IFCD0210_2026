@@ -1725,28 +1725,35 @@ Challenge
 
 ### Día 4 (J 21/05/2026) - M3.00 11 - Git y GitHub
 
-<!-- - Git y GitHub
+- Review: Documentación con Swagger
 
+- Git y GitHub
   - Revisión de los conceptos conocidos
-    - Etiquetas: Git reset y git checkout
-    - Ramas: procesos de merge
+    - Git: SCV Distribuido
+    - Comandos básicos
     - Remotos: github
+
+[descanso]
+
+- Git y GitHub
   - Git internals
     - Objetos: blob, tree y commit
     - plumbing commands: creación de hashes
     - Relación entre elementos
-    - estructura interna de la carpeta .git -->
+    - estructura interna de la carpeta .git
 
 ### Día 5 (V 22/05/2026) - M3.00 12 - Git y GitHub
 
 <!-- - Git y GitHub
-  - Git internals
+
   - Comandos Git
+    - Etiquetas: Git reset y git checkout
     - git rebase
     - git commit --amend
     - rebase interactivo
     - git cherry-pick
     - git stash
+  - Ramas: procesos de merge
   - Flujos de trabajo
     - Git Flow
     - GitLab Flow

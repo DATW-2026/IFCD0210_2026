@@ -17,21 +17,26 @@ jobs:
           uses: actions/setup-node@v6
           with:
             node-version: '24.x'
-
-        - name: goto project directory
-          run: cd 21.CI.CD # Replace with your actual project directory
         
         - name: Install dependencies
-          run: npm install
+          run: |
+            cd 21.CI.CD # Replace with your actual project directory
+            npm install
 
         - name: Run linting
-          run: npm run lint
+          run: |
+            cd 21.CI.CD # Replace with your actual project directory
+            npm run lint
 
         - name: Run tests
-          run: npm run test:c
+          run: |
+            cd 21.CI.CD # Replace with your actual project directory
+            npm run test:c
 
         - name: Build project
-          run: npm run build
+          run: |
+            cd 21.CI.CD # Replace with your actual project directory
+            npm run build
 
         # - name: Deploy to production
         #   if: github.ref == 'refs/heads/main'

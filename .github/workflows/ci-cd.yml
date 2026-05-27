@@ -18,11 +18,11 @@ jobs:
           with:
             node-version: '24.x'
 
-        - name: Install dependencies
-          run: npm ci
-
         - name: goto project directory
           run: cd 21.CI.CD # Replace with your actual project directory
+        
+        - name: Install dependencies
+          run: npm ci
 
         - name: Run linting
           run: npm run lint

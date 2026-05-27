@@ -43,7 +43,7 @@ organiza correctamente los test (0.5 puntos) y añade los test necesarios para c
 ## Tercera parte (3.5 puntos): Test del Frontend
 
 Utilizando vitest y testing-library, que ya tienes configurado e instalado, haz los test necesarios para cada uno de los componentes proporcionados.
-organiza correctamente los test ( 0.5 puntos y añade los test necesarios para cada componente (3 puntos).
+organiza correctamente los test (0.5 puntos y añade los test necesarios para cada componente (3 puntos).
 Header (1 punto)
 ProductForm (1 punto)
 Repo Service (1 punto)
@@ -51,4 +51,5 @@ Repo Service (1 punto)
 ## Primera parte (2 puntos): Git - Continuación
 
 - Conforme completes las tareas, haz los commit necesarios.
-- Cuando termines, mergea la PR en la rama principal. Tu GitHub Action debería comprobar que los test pasan y que no hay errores en el código. Si no es así, no deberías poder hacer merge.
+- Cuando termines, mergea la PR en la rama principal.
+  _Tu GitHub Action debería comprobar que los test pasan y que no hay errores en el código. Si no es así, no deberías poder hacer merge._ (No se aplica)
